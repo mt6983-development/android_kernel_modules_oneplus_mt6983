@@ -46,13 +46,17 @@
 #define SIZE_MAX        (~(size_t)0)
 #endif /* LINUX_VERSION_CODE */
 
+#include <linux/minmax.h>
+
 /**
  * MIN - Return the lesser of two values.
  *
  * As a macro it may evaluate its arguments more than once.
  * Refer to MAX macro for more details
  */
+#ifndef MIN
 #define MIN(x, y)	((x) < (y) ? (x) : (y))
+#endif
 
 /**
  * MAX -  Return the greater of two values.
@@ -64,7 +68,9 @@
  * to retrieve the min and max of two values, consider using a conditional swap
  * instead.
  */
+#ifndef MAX
 #define MAX(x, y)	((x) < (y) ? (y) : (x))
+#endif
 
 /**
  * @hideinitializer
