@@ -6,3 +6,4 @@ kernel-5.10
 MODULE.bazel
 bazel-*
 out/
+port-docs
